@@ -1,0 +1,24 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Liste des notes
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item *ngFor="let item of noteService.noteList"
+              routerLink="/form/{{ item.id }}">
+      <ion-label>
+        {{ item.title }}
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar style="padding:3px">
+    <ion-button routerLink="/form" expand="block">Nouvelle note</ion-button>
+  </ion-toolbar>
+</ion-footer>
